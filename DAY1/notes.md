@@ -34,7 +34,7 @@ A **testbench** is a **simulation environment** used to verify your design:
 - Contains **no physical hardware**, only simulation code.  
 
 **Example diagram:**
-![Testbench Overview](/home/veeraragavan/Pictures/Screenshots/mux_tb_pic.png)
+![Testbench Overview](Screenshots/mux_tb_pic.png)
 
 ---
 
