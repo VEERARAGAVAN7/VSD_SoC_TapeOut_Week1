@@ -112,7 +112,7 @@ power_lut_template ("power_inputs_1") {
 
 
 
-## 1️⃣ What is Hierarchical Synthesis?
+## 1. What is Hierarchical Synthesis?
 
 Hierarchical synthesis means that the synthesis tool understands the module hierarchy in your design. Instead of flattening everything into gates immediately, it:
 
@@ -130,7 +130,7 @@ fulladder
 Here, fulladder is the top module, and it contains two instances of halfadder. This is a two-level hierarchy.
 
 
-## 2️⃣ Why hierarchy matters
+## 2.Why hierarchy matters
 
 - Reusability: You can reuse halfadder in other designs.
 - Clarity: Makes large designs manageable.
@@ -138,3 +138,29 @@ Here, fulladder is the top module, and it contains two instances of halfadder. T
 - Debugging: Easier to simulate and verify smaller modules separately.
 
 ![Heirarchy_Synthesis](Screenshots/heirarchySynth.png)
+
+
+## Flatten Synthesis
+
+### 1. What is Flatten Synthesis?
+Flatten synthesis is the process of removing the design hierarchy and converting the entire design into a single-level netlist of logic gates. In this process, submodules are eliminated, and their logic is merged into the top module.
+
+---
+
+### 2. Why it is Used?
+- To allow the synthesis tool to view the entire design as one block.  
+- Helps in performing aggressive global optimizations.  
+- Can improve timing, area, and power efficiency of the design.  
+- Useful for final implementation in ASIC/FPGA flows.
+
+---
+
+### 3. Importance of Flatten Synthesis
+- Provides better optimization opportunities since module boundaries are removed.  
+- Ensures maximum performance for critical designs.  
+- Commonly applied before place-and-route to achieve efficient mapping.  
+- However, it reduces readability and makes debugging harder, so it is usually applied only at later stages of the design flow.
+
+![Flatten_Synthesis](Screenshots/flattenSynth.png)
+
+
