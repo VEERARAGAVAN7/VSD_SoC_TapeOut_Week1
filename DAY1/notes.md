@@ -58,14 +58,14 @@ sudo apt install iverilog
 ```
 
 
-##Simulation Flow:
+## Simulation Flow:
 - Write RTL design and testbench.
 - Compile with iverilog.
 - Run simulation to generate .vcd waveform file.
 - Open .vcd in GTKWave to inspect signals.
 
 
-##5.Introduction to Yosys & Sky130 PDKs
+## 5. Introduction to Yosys & Sky130 PDKs
 
 Yosys is an open-source tool for:
 
@@ -79,25 +79,31 @@ Sky130 PDK (Process Design Kit) is a library for designing chips in the SkyWater
 -Used by Yosys to map Verilog designs to physical gates.
 
 ```
-yosys
+yosys 
+
 read_liberty -lib /home/veeraragavan/SoC_TapeOut_Program/Week0/sky130_fd_sc_hd__tt_025C_1v80.lib
 read_verilog /home/veeraragavan/SoC_TapeOut_Program/Week0/verilog_files/good_mux.v
 synth -top good_mux
 abc -liberty /home/veeraragavan/SoC_TapeOut_Program/Week0/sky130_fd_sc_hd__tt_025C_1v80.lib
 show
 ```
-##6. Design Code, Waveform & Netlist
+## 6. Design Code, Waveform & Netlist
 
-###6.1 2-to-1 Multiplexer Verilog Code
+### 6.1 2-to-1 Multiplexer Verilog Code
+
+```
+Verilog
+
 module mux(input I0,I1,Sel,output Out);
-
 assign Out = Sel ? I1 : I0;
-
 endmodule
+```
 
-###6.2 Testbench (mux_tb.v)
+### 6.2 Testbench (mux_tb.v)
+```
+Verilog
+
 module mux_tb();
-
 reg I0=0,I1=1,Sel=0;
 wire Out;
 
@@ -121,14 +127,14 @@ $dumpvars(0);
 end
 
 endmodule
+```
+### 6.3 Simulation Waveform
+![Mux_Waveform](Screenshots/gtkwave.png)
 
-###6.3 Simulation Waveform
-![Mux_Waveform](/home/veeraragavan/VSD_SoC_TapeOut_Program/week1/DAY1/Screenshots/gtkwave.png)
+### 6.4 Gate-level Netlist
+![Mux_Netlist](Screenshots/mux_net.png)
 
-###6.4 Gate-level Netlist
-![Mux_Waveform](/home/veeraragavan/VSD_SoC_TapeOut_Program/week1/DAY1/Screenshots/mux_net.png)
-
-##7. Summary
+## 7. Summary
 
 1.RTL design describes circuits at the register-transfer level.
 2.Testbenches are used for verification in simulation.
