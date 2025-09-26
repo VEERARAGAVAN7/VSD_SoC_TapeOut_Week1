@@ -112,4 +112,29 @@ power_lut_template ("power_inputs_1") {
 
 
 
+## 1️⃣ What is Hierarchical Synthesis?
 
+Hierarchical synthesis means that the synthesis tool understands the module hierarchy in your design. Instead of flattening everything into gates immediately, it:
+
+- Recognizes submodules.
+- Keeps the hierarchy in memory.
+- Maps each module into standard cells or primitives.
+- Combines submodules into higher-level modules.
+
+Example:
+
+fulladder
+ ├─ halfadder (HA1)
+ └─ halfadder (HA2)
+
+Here, fulladder is the top module, and it contains two instances of halfadder. This is a two-level hierarchy.
+
+
+## 2️⃣ Why hierarchy matters
+
+- Reusability: You can reuse halfadder in other designs.
+- Clarity: Makes large designs manageable.
+- Optimizations: Synthesis tools can optimize modules individually or flatten only if needed.
+- Debugging: Easier to simulate and verify smaller modules separately.
+
+![Heirarchy_Synthesis](Screenshots/heirarchySynth.png)
