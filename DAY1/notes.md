@@ -33,8 +33,6 @@ A **testbench** is a **simulation environment** used to verify your design:
 - Checks if the **outputs** behave as expected.  
 - Contains **no physical hardware**, only simulation code.  
 
-**Example diagram:**
-![Testbench Overview](Screenshots/mux_tb_pic.png)
 
 ---
 
@@ -69,14 +67,14 @@ sudo apt install iverilog
 
 Yosys is an open-source tool for:
 
--Synthesis: Converts HDL code to gate-level netlists.
--Optimization: Improves timing, area, or power.
--Technology mapping: Maps logic to specific standard cells.
+- Synthesis: Converts HDL code to gate-level netlists.
+- Optimization: Improves timing, area, or power.
+- Technology mapping: Maps logic to specific standard cells.
 
 Sky130 PDK (Process Design Kit) is a library for designing chips in the SkyWater 130nm process:
 
--Contains standard cells (.lib files) with timing, power, and area data.
--Used by Yosys to map Verilog designs to physical gates.
+- Contains standard cells (.lib files) with timing, power, and area data.
+- Used by Yosys to map Verilog designs to physical gates.
 
 ```
 yosys 
@@ -136,9 +134,9 @@ endmodule
 
 ## 7. Summary
 
-1.RTL design describes circuits at the register-transfer level.
-2.Testbenches are used for verification in simulation.
-3.RTL synthesis converts Verilog code to gates using libraries.
-4.iverilog and GTKWave help simulate and visualize designs.
-5.Yosys with Sky130 PDK maps RTL to real hardware gates.
-6.Lab: Implemented and verified a 2-to-1 multiplexer.
+1. RTL design describes circuits at the register-transfer level.
+2. Testbenches are used for verification in simulation.
+3. RTL synthesis converts Verilog code to gates using libraries.
+4. iverilog and GTKWave help simulate and visualize designs.
+5. Yosys with Sky130 PDK maps RTL to real hardware gates.
+6. Lab: Implemented and verified a 2-to-1 multiplexer.
