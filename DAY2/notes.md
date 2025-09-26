@@ -1,6 +1,6 @@
-## DAY-2  Timing libs,hierarchical vs flat synthsis and efficient flop coding styles
+# DAY-2  Timing libs,hierarchical vs flat synthsis and efficient flop coding styles
 
-# VLSI Library Overview
+## VLSI Library Overview
 
 ## 1. What is a library in VLSI?
 
@@ -52,7 +52,7 @@ In VLSI, library files are usually of different types, serving different purpose
 3. **Place-and-route** → Uses LEF/DEF + cell library for physical design.
 4. **Post-layout simulation** → Uses SPICE netlist of library cells for accurate timing.
 
-![Library_file](screenshots/library.png)
+![Library_file](Screenshots/library.png)
 
 ## 1. Library Declaration
 
