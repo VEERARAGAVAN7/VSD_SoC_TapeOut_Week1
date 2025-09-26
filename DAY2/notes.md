@@ -164,3 +164,98 @@ Flatten synthesis is the process of removing the design hierarchy and converting
 ![Flatten_Synthesis](Screenshots/flattenSynth.png)
 
 
+# Flip-Flop Coding Styles
+
+## Asynchronous Reset
+In asynchronous reset, the reset signal forces the flip-flop output to `0` immediately, regardless of the clock.  
+The reset has higher priority and is checked along with the clock edge.
+
+### Code:
+```verilog
+module Asyn_reset(input clk, Asyn_rst, D, output reg Q);
+always @(posedge clk, posedge Asyn_rst) begin
+    if (Asyn_rst)
+        Q <= 1'b0;
+    else
+        Q <= D;
+end
+endmodule
+```
+![Asynchronous_Reset](Screenshots/Asyn_rst.png)
+
+## Asynchronous Set
+In asynchronous set, the set signal forces the flip-flop output to 1 immediately, regardless of the clock.
+The set has higher priority and is checked along with the clock edge.
+
+### Code :
+```
+module Asyn_reset(input clk, Asyn_set, D, output reg Q);
+always @(posedge clk, posedge Asyn_set) begin
+    if (Asyn_set)
+        Q <= 1'b1;
+    else
+        Q <= D;
+end
+endmodule
+
+```
+![Asynchronous_Set](Screenshots/Asyn_set.png)
+
+
+## Synchronous Reset
+In synchronous reset, the reset signal is checked only at the active clock edge.
+Unlike asynchronous reset, it won’t affect the output until a clock edge occurs.
+
+### code :
+```
+module Syn_reset(input clk, Syn_rst, D, output reg Q);
+always @(posedge clk) begin
+    if (Syn_rst)
+        Q <= 1'b0;
+    else
+        Q <= D;
+end
+endmodule
+
+```
+![Synchronous_Reset](Screenshots/Syn_rst.png)
+
+## Synthesis with Yosys
+
+### Start Yosys:
+```
+yosys
+```
+### Read Liberty library:
+```
+read_liberty -lib /home/veeraragavan/VSD_Soc_TapeOut_Program/VSD/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+### Read Verilog code:
+```
+read_verilog Asyn_rst.v
+```
+### Synthesize:
+```
+synth -top dff_asyncres
+```
+### Map flip-flops:
+```
+dfflibmap -liberty /home/veeraragavan/VSD_Soc_TapeOut_Program/VSD/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+### Technology mapping:
+```
+abc -liberty /home/veeraragavan/VSD_Soc_TapeOut_Program/VSD/sky130RTLDesignAndSynthesisWorkshop/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+
+### Visualize the gate-level netlist:
+```
+show
+```
+
+![Dff_Netlist](Screenshots/dff_net.png)
+
+
+## Summary
+This overview provides you with practical insights into timing libraries, synthesis strategies, and reliable coding practices for flip-flops. Continue experimenting with these concepts to deepen your understanding of RTL design and synthesis.
+
+
