@@ -144,4 +144,98 @@ endmodule
 
 
 
+### Lab5 :
 
+### code5 : 
+``` 
+module dff_const1(input clk, input reset, output reg q);
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+		q <= 1'b0;
+	else
+		q <= 1'b1;
+end
+
+endmodule
+
+```
+
+### Waveform:
+![Dff_Const1](Screenshots/dff_const1_wf.png)
+
+
+### Opt_Net5 :
+![Dff_const1](Screenshots/dff_const1.png)
+
+
+
+### Lab6 :
+
+### code6 : 
+``` 
+module dff_const2(input clk, input reset, output reg q);
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+		q <= 1'b1;
+	else
+		q <= 1'b1;
+end
+
+endmodule
+
+```
+
+### Waveform:
+![Dff_Const2](Screenshots/dff_const2_wf.png)
+
+
+### Opt_Net6 :
+![Dff_const2](Screenshots/dff_const2.png)
+
+
+
+### Lab7 :
+
+### code7 : 
+``` 
+module dff_const3(input clk, input reset, output reg q);
+reg q1;
+
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+	begin
+		q <= 1'b1;
+		q1 <= 1'b0;
+	end
+	else
+	begin
+		q1 <= 1'b1;
+		q <= q1;
+	end
+end
+
+endmodule
+
+```
+
+### Waveform:
+![Dff_Const3](Screenshots/dff_const3_wf.png)
+
+
+### Opt_Net7 :
+![Dff_const3](Screenshots/dff_const3.png)
+
+
+## Summary
+Focus: Optimization techniques for combinational and sequential circuits in digital design, with practical Verilog labs.
+
+### Topics Covered:
+
+- Constant Propagation: Replacing variables with constant values to simplify logic and improve circuit efficiency.
+- State Optimization: Reducing states and optimizing encoding in finite state machines to use less logic and power.
+- Cloning: Duplicating logic cells/modules to improve timing and balance load.
+- Retiming: Repositioning registers in a circuit to enhance performance without altering its function.
+- Labs: Six practical Verilog labs illustrate these concepts, including examples of combinational logic optimizations and D flip-flop behaviors, each with code snippets and output images.
