@@ -238,4 +238,4 @@ Focus: Optimization techniques for combinational and sequential circuits in digi
 - State Optimization: Reducing states and optimizing encoding in finite state machines to use less logic and power.
 - Cloning: Duplicating logic cells/modules to improve timing and balance load.
 - Retiming: Repositioning registers in a circuit to enhance performance without altering its function.
-- Labs: Six practical Verilog labs illustrate these concepts, including examples of combinational logic optimizations and D flip-flop behaviors, each with code snippets and output images.
+- Labs: Seven practical Verilog labs illustrate these concepts, including examples of combinational logic optimizations and D flip-flop behaviors, each with code snippets and output images.
