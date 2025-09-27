@@ -6,6 +6,5 @@ begin
 		y <= i1;
 	else if (i2)
 		y <= i3;
-
 end
 endmodule

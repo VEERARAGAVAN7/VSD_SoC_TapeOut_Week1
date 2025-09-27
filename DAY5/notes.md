@@ -80,13 +80,35 @@ end
 endmodule
 
 ```
-#### GTK Waveform
+#### GTK Waveform:
 
 ![Incomplete_If](Screenshots/incomplete_if_wf.png)
 
-#### IncompleteIf Netlist
+#### IncompleteIf Netlist:
 
 ![Incomplete_If_Net](Screenshots/incomplete_if_net.png)
 
 
 
+### Lab 2: Incomplete If Statement
+
+
+#### code:
+```
+module incomp_if2 (input i0 , input i1 , input i2 , input i3, output reg y);
+always @ (*)
+begin
+	if(i0)
+		y <= i1;
+	else if (i2)
+		y <= i3;
+end
+endmodule
+```
+#### GTK Waveform:
+
+![Incomplete_If2](Screenshots/incomplete_if2_wf.png)
+
+#### IncompleteIf Netlist:
+
+![Incomplete_If_Net2](Screenshots/incomplete_if2_net.png)
