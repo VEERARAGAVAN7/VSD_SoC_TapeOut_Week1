@@ -159,7 +159,7 @@ endmodule
 
 
 ### Netlist through yosys
-![Bad_mux_net](Screenshots/bad_mux.png)
+![Bad_mux_net](Screenshots/bad_mux_net.png)
 
 
 ### Gate Level Simulation
