@@ -202,6 +202,7 @@ end
 
 
 ### Netlist through yosys
+
 ![Blocking_caveat_net](Screenshots/blocking_assign_net.png)
 
 
