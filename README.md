@@ -28,7 +28,6 @@ This repository documents my **week-by-week progress** with tasks inside each we
 
 ## 📅 **Week 1 — RTL Design and Synthesis Foundations**
 
-<details>
 <summary><b>🔑 Week 1: RTL Coding, Synthesis, and Optimization Concepts</b></summary>
 
 This week focused on building strong fundamentals in **Verilog RTL design** and exploring synthesis techniques for both combinational and sequential circuits.
@@ -72,7 +71,6 @@ This week focused on building strong fundamentals in **Verilog RTL design** and 
 * Learned pitfalls of blocking assignments and how to avoid mismatches
 * Gained exposure to advanced synthesis optimization techniques
 
-</details>
 
 ---
 
