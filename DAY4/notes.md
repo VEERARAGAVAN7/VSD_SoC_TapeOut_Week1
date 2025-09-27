@@ -168,13 +168,59 @@ endmodule
 
 
 
----
+### Lab 3: Blocking Assignment Caveat
+
+### Verilog Code (Buggy Version):
+
+```
+module blocking_caveat (input a, input b, input c, output reg d);
+  reg x;
+  always @ (*) begin
+    d = x & c;
+    x = a | b;
+  end
+endmodule
+```
+
+#### What’s Wrong?
+The order of assignments causes d to use the old value of x, not the newly computed one.
+
+#### Best Practice:
+Always assign intermediate variables before using them.
+
+#### Corrected Version:
+```
+always @ (*) begin
+  x = a | b;
+  d = x & c;
+end
+```
+
+### Gtkwave simulation waveform
+
+![Blocking_caveat](Screenshots/blocking_assign_wf.png)
+
+
+### Netlist through yosys
+![Blocking_caveat_net](Screenshots/blocking_assign.png)
+
+
+### Synthesis of the Blocking Caveat Module
+Synthesize the corrected version of the blocking_caveat module.
+Observe that synthesis tools implement the correct logic regardless of the order of statements, but simulation results may differ.
+Learning Point: RTL coding style matters for avoiding simulation-synthesis mismatches.
+
+![Blocking_caveat_GLS](Screenshots/blocking_assign_gls.png)
+
 
 ## 5. Summary
 
-* **GLS** validates synthesized netlist against RTL design and reveals real-world timing behavior.
-* **Synthesis-Simulation Mismatch** occurs due to poor coding practices; following RTL design guidelines prevents it.
-* **Blocking vs. Non-Blocking** assignments differ in execution order, and choosing the right one is critical for accurate RTL design.
+- Gate-Level Simulation (GLS): Validates netlist functionality, timing, and testability after synthesis.
+- Synthesis-Simulation Mismatch: Avoid mismatches by using synthesizable, unambiguous RTL code.
+- Blocking vs. Non-Blocking:
+- Use blocking (=) for combinational logic.
+- Use non-blocking (<=) for sequential logic.
+- Labs: Reinforced key concepts, highlighted common pitfalls (e.g., blocking caveat), and demonstrated how synthesis tools may differ from simulation.
 
 ---
 
