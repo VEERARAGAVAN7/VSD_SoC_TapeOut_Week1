@@ -202,7 +202,7 @@ end
 
 
 ### Netlist through yosys
-![Blocking_caveat_net](Screenshots/blocking_assign.png)
+![Blocking_caveat_net](Screenshots/blocking_assign_net.png)
 
 
 ### Synthesis of the Blocking Caveat Module
