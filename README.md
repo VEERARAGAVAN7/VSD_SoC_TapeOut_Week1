@@ -49,7 +49,9 @@ This week focused on building strong fundamentals in **Verilog RTL design** and 
 * **Day 3** → *Combinational and Sequential Optimization*
 
   * Logic simplification techniques
-  * Multi-level optimization strategies
+  * Constant propagation
+  * State optimization in FSMs
+  * Retiming and cloning techniques
   * Sequential circuit optimization methods
 
 * **Day 4** → *GLS, Blocking vs. Non-Blocking, and Synthesis-Simulation Mismatch*
@@ -59,10 +61,11 @@ This week focused on building strong fundamentals in **Verilog RTL design** and 
   * Debugging synthesis-simulation mismatches
 
 * **Day 5** → *Optimization in Synthesis*
-
-  * Constant propagation
-  * State optimization in FSMs
-  * Retiming and cloning techniques
+  
+  * Incomplete if-else, if-elif-else, case optimization
+  * Infered Latches in incomplete circuit
+  * Loop optimization
+  
 
 ### 🌟 **Key Learnings from Week 1**
 
